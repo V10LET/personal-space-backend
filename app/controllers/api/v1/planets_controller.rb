@@ -25,6 +25,6 @@ class Api::V1::PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :image_url)
+    params.require(:planet).permit(:name, :image_url, :notes)
   end
 end
