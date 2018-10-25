@@ -9,6 +9,14 @@ class Api::V1::PlanetsController < ApplicationController
     render json: @planet
   end
 
+  def create
+    puts params
+    @planet = Planet.new(planet_params)
+    if @planet.save
+      render json: @planet
+    end
+  end
+
   def update
     @planet = Planet.find(params[:id]).update(planet_params)
     render json: @planet

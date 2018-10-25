@@ -9,6 +9,13 @@ class Api::V1::LikesController < ApplicationController
     render json: @like
   end
 
+  def create
+    @like = Like.new(like_params)
+    if @like.save
+      render json: @like
+    end
+  end
+
   def destroy
     Like.find(params[:id]).destroy
   end
