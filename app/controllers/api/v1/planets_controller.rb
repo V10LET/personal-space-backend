@@ -22,6 +22,10 @@ class Api::V1::PlanetsController < ApplicationController
     render json: @planet
   end
 
+  def destroy
+    Planet.find(params[:id]).destroy
+  end
+
   private
 
   def planet_params
